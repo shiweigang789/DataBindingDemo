@@ -24,5 +24,20 @@
         android:layout_height="wrap_content"
         android:onClick="@{(v)->presenter.onClick(v)}"/>
 
+    <Button
+        android:id="@+id/btn_simple"
+        android:text="DATA BINDING SIMPLE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"/>
+
+    <Button
+        android:id="@+id/btn_observable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"
+        android:text="DataBinding Observable"
+        android:textAllCaps="false"/>
+
 </LinearLayout>
 </layout>

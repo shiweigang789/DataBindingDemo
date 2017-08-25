@@ -18,6 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.FontBindingActivity"/>
+        <activity android:name=".ui.DataBindSimpleActivity"/>
+        <activity android:name=".ui.UpdateUserActivity"/>
     </application>
 
 </manifest>
