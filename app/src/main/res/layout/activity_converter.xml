@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data class="ConverterBinding">
+
+        <variable
+            name="user"
+            type="com.duoduolicai360.databindingdemo.model.User"/>
+
+        <variable
+            name="event"
+            type="com.duoduolicai360.databindingdemo.event.UserFollowEvent"/>
+
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/custom_setter_note"
+        android:textSize="12dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@{user.isFollow ? @color/red : @color/white}"
+            android:gravity="center"
+            android:padding="@{@dimen/padding}"
+            android:text="@{user.isFollow ? `UnFollow` : `Follow`,default=`Follow`}"
+            android:textColor="@{user.isFollow ? @color/black : @color/blue}"
+            android:textSize="@{user.isFollow ? @dimen/follow : @dimen/unfollow}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:onClick="@{user.isFollow ? event.unFollow : event.follow}"
+            android:text="@{user.isFollow ? `UnFollow` : `Follow`,default=`Follow`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>
+</layout>

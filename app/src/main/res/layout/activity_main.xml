@@ -39,5 +39,45 @@
         android:text="DataBinding Observable"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"
+        android:text="DataBinding List(RxJava+Retrofit1.9)"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_el"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"
+        android:text="Expression Language"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_converter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"
+        android:text="Converter"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_custom_setter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"
+        android:text="Custom Setter"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onClick(v)}"
+        android:text="Search Debounce"
+        android:textAllCaps="false"/>
+
 </LinearLayout>
 </layout>

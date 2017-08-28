@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="CustomSetterBinding">
+
+        <variable
+            name="avatar"
+            type="String"/>
+
+        <variable
+            name="errorAvatar"
+            type="String"/>
+
+        <variable
+            name="leftPadding"
+            type="int"/>
+
+        <variable
+            name="event"
+            type="com.duoduolicai360.databindingdemo.event.UserFollowEvent"/>
+
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Please see log by filter `BindingAdapter`"
+        android:textColor="@color/red"
+        android:textSize="12dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@{@color/red}"
+            android:gravity="center"
+            android:paddingLeft="@{leftPadding}"
+            android:text="leftPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:onClick="setLeftPadding"
+            android:text="Setter For android:paddingLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:background="#f0f0f0"
+            app:imageUrl="@{avatar}"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="loadOtherImage"
+            android:text="Setter For ImageView Load Image"
+            android:textAllCaps="false"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#f0f0f0"
+            app:error="@{@drawable/erorr_loading}"
+            app:imageUrl="@{errorAvatar}"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:onClick="loadRightImage"
+            android:text="Setter For ImageView Load Image When Error"
+            android:textAllCaps="false"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Custom Setter setText By Span: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:spanText="@{`Hello Custom Setter`}"/>
+
+    </LinearLayout>
+</LinearLayout>
+</layout>
